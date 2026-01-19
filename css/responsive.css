@@ -1,16 +1,64 @@
-/* Tablet Styles */
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 2.5rem;
+/* ===========================================
+   BD Laundromat & Logistics - Responsive Styles
+   Version: 2.0
+   Updated: January 2024
+   =========================================== */
+
+/* ====================
+   Large Desktops (1200px and up)
+   ==================== */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0;
     }
     
     .services-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
+/* ====================
+   Tablets and Small Desktops (992px to 1199px)
+   ==================== */
+@media (max-width: 1199px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+/* ====================
+   Tablets (768px to 991px)
+   ==================== */
+@media (max-width: 991px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+    }
+    
+    /* Header */
+    .mobile-menu {
+        display: block;
+    }
+    
     nav ul {
         display: none;
         position: absolute;
@@ -19,19 +67,627 @@
         width: 100%;
         background-color: var(--primary);
         flex-direction: column;
-        padding: 1rem 0;
+        padding: var(--space-md) 0;
+        box-shadow: var(--shadow-lg);
+        z-index: 999;
     }
     
-    /* ... rest of mobile styles ... */
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+    }
+    
+    .call-btn {
+        margin: 15px auto 0;
+        width: 80%;
+        display: block;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 7rem 0 4rem;
+        min-height: auto;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-features {
+        gap: var(--space-lg);
+    }
+    
+    /* Services */
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-md);
+    }
+    
+    /* About Stats */
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Testimonials */
+    .testimonials-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    /* CTA */
+    .cta h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta p {
+        font-size: 1.1rem;
+    }
 }
 
-/* Small Mobile Styles */
-@media (max-width: 576px) {
+/* ====================
+   Mobile Landscape (576px to 767px)
+   ==================== */
+@media (max-width: 767px) {
+    /* Typography */
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    /* Spacing */
+    .services,
+    .about,
+    .locations,
+    .testimonials,
+    .contact {
+        padding: var(--space-xl) 0;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: var(--space-sm);
+        margin-top: var(--space-lg);
+    }
+    
+    .feature {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+    
+    /* Services */
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .service-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* About */
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+    
+    .stat {
+        padding: var(--space-md);
+    }
+    
+    .stat h4 {
+        font-size: 2rem;
+    }
+    
+    .stat i {
+        font-size: 2rem;
+    }
+    
+    /* Locations */
+    .location-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .location-info,
+    .location-map {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    /* Testimonials */
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .testimonial-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* Contact */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .contact-info,
+    .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .social-links {
+        text-align: center;
+    }
+    
+    /* CTA */
+    .cta {
+        padding: var(--space-xl) 0;
+    }
+    
+    .cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+    
+    .footer-certifications p {
+        justify-content: center;
+    }
+    
+    .footer-links ul li a:hover,
+    .footer-services ul li a:hover {
+        transform: none;
+    }
+}
+
+/* ====================
+   Mobile Portrait (up to 575px)
+   ==================== */
+@media (max-width: 575px) {
+    /* Typography */
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    /* Header */
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .logo-icon {
+        font-size: 2rem;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 5rem 0 2.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+    }
+    
+    /* Section Titles */
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title p {
+        font-size: 0.95rem;
+    }
+    
+    /* Service Cards */
+    .service-content {
+        padding: var(--space-md);
+    }
+    
+    .service-icon {
+        padding: var(--space-md);
+        font-size: 2rem;
+    }
+    
+    /* About Stats */
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .stat {
+        padding: var(--space-md);
+    }
+    
+    .stat h4 {
+        font-size: 1.8rem;
+    }
+    
+    /* Mission & Vision */
+    .mission, .vision {
+        padding: var(--space-md);
+    }
+    
+    /* CEO Card */
+    .ceo-card {
+        padding: var(--space-lg);
+    }
+    
+    /* Location */
+    .location-info,
+    .location-map {
+        padding: var(--space-md);
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: var(--space-lg);
+    }
+    
+    .testimonial-content {
+        font-size: 1rem;
+    }
+    
+    /* Contact */
+    .contact-form {
+        padding: var(--space-lg);
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Form */
+    .form-group {
+        margin-bottom: var(--space-md);
+    }
+    
+    .checkbox span {
+        font-size: 0.8rem;
+    }
+    
+    /* CTA */
+    .cta h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta p {
+        font-size: 0.95rem;
+    }
+    
+    .btn-large {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    /* Footer */
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    .disclaimer {
+        font-size: 0.7rem;
+    }
+}
+
+/* ====================
+   Very Small Devices (up to 375px)
+   ==================== */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+    
+    .feature span {
+        font-size: 1rem;
+    }
+    
+    .services-container,
+    .testimonials-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card,
+    .testimonial-card {
+        max-width: 100%;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-form {
+        padding: var(--space-md);
+    }
+}
+
+/* ====================
+   Print Styles
+   ==================== */
+@media print {
+    /* Hide unnecessary elements */
+    .mobile-menu,
+    .call-btn,
+    .hero-btns,
+    .hero-features,
+    .social-links,
+    .cta,
+    form,
+    .directions .btn {
+        display: none !important;
+    }
+    
+    /* Reset colors for printing */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: white !important;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+    
+    /* Container adjustments */
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+    
+    /* Remove backgrounds and shadows */
+    header,
+    .hero,
+    .service-card,
+    .testimonial-card,
+    .stat,
+    .contact-form,
+    .location-map {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        position: static !important;
+    }
+    
+    /* Text colors */
+    h1, h2, h3, h4, h5, h6 {
+        color: #000 !important;
+    }
+    
+    p, li {
+        color: #333 !important;
+    }
+    
+    /* Spacing for print */
+    .services,
+    .about,
+    .locations,
+    .testimonials,
+    .contact {
+        padding: 20pt 0 !important;
+    }
+    
+    /* Prevent page breaks inside important elements */
+    .service-card,
+    .testimonial-card,
+    .stat {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    /* Add URLs after links */
+    .contact-item a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+        color: #666;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        background: white !important;
+        color: black !important;
+        padding: 20pt 0 10pt !important;
+    }
+    
+    .footer-contact p,
+    .footer-about p,
+    .copyright p {
+        color: #666 !important;
+    }
+}
+
+/* ====================
+   High Resolution Displays
+   ==================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Add high-res background images if needed */
+}
+
+/* ====================
+   Orientation Specific
+   ==================== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 6rem 0 3rem;
+    }
+    
     .hero h1 {
         font-size: 2rem;
     }
     
-    .services-container {
-        grid-template-columns: 1fr;
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-features {
+        margin-top: var(--space-lg);
+    }
+}
+
+/* ====================
+   Accessibility
+   ==================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ====================
+   Dark Mode Support
+   ==================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-light: #1a1a1a;
+        --bg-section: #2d2d2d;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --light: #2d2d2d;
+        --border-light: #444444;
+        --border-medium: #555555;
+    }
+    
+    .service-card,
+    .stat,
+    .location-map,
+    .testimonial-card,
+    .contact-form {
+        background-color: #2d2d2d;
+        border: 1px solid #444444;
     }
 }
