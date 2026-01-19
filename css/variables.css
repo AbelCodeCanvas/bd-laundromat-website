@@ -1,12 +1,470 @@
+/* ===========================================
+   BD Laundromat & Logistics - CSS Variables
+   Version: 2.0
+   Updated: January 2024
+   =========================================== */
+
+/* ====================
+   Color System
+   ==================== */
 :root {
-    --primary: #2a5c8f;
-    --secondary: #f8b739;
-    --light: #f4f4f4;
-    --dark: #333;
-    --gray: #777;
-    --white: #ffffff;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --border-radius: 8px;
-    --container-width: 1200px;
+    /* Primary Colors - Blue Theme */
+    --color-primary-50: #e8f0f8;
+    --color-primary-100: #c5d8ec;
+    --color-primary-200: #a2c0e0;
+    --color-primary-300: #7ea8d4;
+    --color-primary-400: #5b90c8;
+    --color-primary-500: #2a5c8f;  /* Main Primary */
+    --color-primary-600: #1a4770;
+    --color-primary-700: #0a3251;
+    --color-primary-800: #001d32;
+    --color-primary-900: #000813;
+    
+    /* Secondary Colors - Gold/Yellow Theme */
+    --color-secondary-50: #fff9e6;
+    --color-secondary-100: #ffefb8;
+    --color-secondary-200: #ffe68a;
+    --color-secondary-300: #ffdc5c;
+    --color-secondary-400: #ffd32e;
+    --color-secondary-500: #f8b739;  /* Main Secondary */
+    --color-secondary-600: #e09b1a;
+    --color-secondary-700: #b87e0c;
+    --color-secondary-800: #906200;
+    --color-secondary-900: #684600;
+    
+    /* Accent Colors - Green for CTAs/Success */
+    --color-accent-50: #e8f7ef;
+    --color-accent-100: #c6ead9;
+    --color-accent-200: #a4ddc3;
+    --color-accent-300: #82d0ad;
+    --color-accent-400: #60c397;
+    --color-accent-500: #2ecc71;  /* Main Accent */
+    --color-accent-600: #27ae60;
+    --color-accent-700: #219653;
+    --color-accent-800: #1b8046;
+    --color-accent-900: #156939;
+    
+    /* Neutral Colors - Grayscale */
+    --color-neutral-50: #f8f9fa;
+    --color-neutral-100: #e9ecef;
+    --color-neutral-200: #dee2e6;
+    --color-neutral-300: #ced4da;
+    --color-neutral-400: #adb5bd;
+    --color-neutral-500: #6c757d;
+    --color-neutral-600: #495057;
+    --color-neutral-700: #343a40;
+    --color-neutral-800: #212529;
+    --color-neutral-900: #121416;
+    
+    /* Semantic Colors */
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-danger: #dc3545;
+    --color-info: #17a2b8;
+    --color-light: #f8f9fa;
+    --color-dark: #212529;
+    
+    /* Brand Colors - Shorthand */
+    --primary: var(--color-primary-500);
+    --primary-light: var(--color-primary-400);
+    --primary-dark: var(--color-primary-600);
+    --primary-extra-dark: var(--color-primary-700);
+    
+    --secondary: var(--color-secondary-500);
+    --secondary-light: var(--color-secondary-400);
+    --secondary-dark: var(--color-secondary-600);
+    --secondary-extra-dark: var(--color-secondary-700);
+    
+    --accent: var(--color-accent-500);
+    --accent-light: var(--color-accent-400);
+    --accent-dark: var(--color-accent-600);
+    
+    /* Background Colors */
+    --bg-body: #ffffff;
+    --bg-section: var(--color-neutral-50);
+    --bg-dark: var(--color-primary-800);
+    --bg-light: var(--color-neutral-100);
+    --bg-card: #ffffff;
+    --bg-footer: var(--color-primary-600);
+    
+    /* Text Colors */
+    --text-primary: var(--color-neutral-900);
+    --text-secondary: var(--color-neutral-700);
+    --text-light: var(--color-neutral-600);
+    --text-lighter: var(--color-neutral-500);
+    --text-white: #ffffff;
+    --text-on-primary: #ffffff;
+    --text-on-secondary: var(--color-neutral-900);
+    --text-on-accent: #ffffff;
+    
+    /* Border Colors */
+    --border-color: var(--color-neutral-300);
+    --border-color-light: var(--color-neutral-200);
+    --border-color-dark: var(--color-neutral-400);
+    --border-color-primary: var(--color-primary-500);
+    --border-color-secondary: var(--color-secondary-500);
+    
+    /* Shadow System */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    --shadow-primary: 0 4px 14px 0 rgba(42, 92, 143, 0.2);
+    --shadow-secondary: 0 4px 14px 0 rgba(248, 183, 57, 0.2);
+    
+    /* Border Radius */
+    --radius-none: 0;
+    --radius-sm: 0.25rem;    /* 4px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-2xl: 1.5rem;    /* 24px */
+    --radius-3xl: 2rem;      /* 32px */
+    --radius-full: 9999px;   /* For pills/circles */
+    
+    /* Spacing Scale (Based on 1rem = 16px) */
+    --space-0: 0;
+    --space-px: 1px;
+    --space-0_5: 0.125rem;   /* 2px */
+    --space-1: 0.25rem;      /* 4px */
+    --space-1_5: 0.375rem;   /* 6px */
+    --space-2: 0.5rem;       /* 8px */
+    --space-2_5: 0.625rem;   /* 10px */
+    --space-3: 0.75rem;      /* 12px */
+    --space-3_5: 0.875rem;   /* 14px */
+    --space-4: 1rem;         /* 16px */
+    --space-5: 1.25rem;      /* 20px */
+    --space-6: 1.5rem;       /* 24px */
+    --space-7: 1.75rem;      /* 28px */
+    --space-8: 2rem;         /* 32px */
+    --space-9: 2.25rem;      /* 36px */
+    --space-10: 2.5rem;      /* 40px */
+    --space-11: 2.75rem;     /* 44px */
+    --space-12: 3rem;        /* 48px */
+    --space-14: 3.5rem;      /* 56px */
+    --space-16: 4rem;        /* 64px */
+    --space-20: 5rem;        /* 80px */
+    --space-24: 6rem;        /* 96px */
+    --space-28: 7rem;        /* 112px */
+    --space-32: 8rem;        /* 128px */
+    --space-36: 9rem;        /* 144px */
+    --space-40: 10rem;       /* 160px */
+    --space-44: 11rem;       /* 176px */
+    --space-48: 12rem;       /* 192px */
+    --space-52: 13rem;       /* 208px */
+    --space-56: 14rem;       /* 224px */
+    --space-60: 15rem;       /* 240px */
+    --space-64: 16rem;       /* 256px */
+    --space-72: 18rem;       /* 288px */
+    --space-80: 20rem;       /* 320px */
+    --space-96: 24rem;       /* 384px */
+    
+    /* Container Sizes */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1400px;
+    --container-full: 100%;
+    
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;     /* 12px */
+    --font-size-sm: 0.875rem;    /* 14px */
+    --font-size-base: 1rem;      /* 16px */
+    --font-size-lg: 1.125rem;    /* 18px */
+    --font-size-xl: 1.25rem;     /* 20px */
+    --font-size-2xl: 1.5rem;     /* 24px */
+    --font-size-3xl: 1.875rem;   /* 30px */
+    --font-size-4xl: 2.25rem;    /* 36px */
+    --font-size-5xl: 3rem;       /* 48px */
+    --font-size-6xl: 3.75rem;    /* 60px */
+    --font-size-7xl: 4.5rem;     /* 72px */
+    --font-size-8xl: 6rem;       /* 96px */
+    --font-size-9xl: 8rem;       /* 128px */
+    
+    /* Font Weights */
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    
+    /* Line Heights */
+    --line-height-none: 1;
+    --line-height-tight: 1.25;
+    --line-height-snug: 1.375;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+    
+    /* Letter Spacing */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+    
+    /* Transitions & Animations */
+    --transition-none: 0s;
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+    --transition-very-slow: 1000ms;
+    
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-Index Layers */
+    --z-index-negative: -1;
+    --z-index-0: 0;
+    --z-index-10: 10;
+    --z-index-20: 20;
+    --z-index-30: 30;
+    --z-index-40: 40;
+    --z-index-50: 50;
+    --z-index-auto: auto;
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+    --z-index-toast: 1080;
+    
+    /* Breakpoints */
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1400px;
+    
+    /* Grid System */
+    --grid-columns: 12;
+    --grid-gutter-width: 1.5rem;
+    --grid-gap: var(--space-6);
+    
+    /* Opacity Values */
+    --opacity-0: 0;
+    --opacity-5: 0.05;
+    --opacity-10: 0.1;
+    --opacity-20: 0.2;
+    --opacity-25: 0.25;
+    --opacity-30: 0.3;
+    --opacity-40: 0.4;
+    --opacity-50: 0.5;
+    --opacity-60: 0.6;
+    --opacity-70: 0.7;
+    --opacity-75: 0.75;
+    --opacity-80: 0.8;
+    --opacity-90: 0.9;
+    --opacity-95: 0.95;
+    --opacity-100: 1;
+    
+    /* Blur Effects */
+    --blur-none: 0;
+    --blur-sm: 4px;
+    --blur-md: 8px;
+    --blur-lg: 16px;
+    --blur-xl: 24px;
+    --blur-2xl: 40px;
+    --blur-3xl: 64px;
+    
+    /* Backdrop Filter */
+    --backdrop-blur-sm: blur(var(--blur-sm));
+    --backdrop-blur-md: blur(var(--blur-md));
+    --backdrop-blur-lg: blur(var(--blur-lg));
+    --backdrop-blur-xl: blur(var(--blur-xl));
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+    --gradient-secondary: linear-gradient(135deg, var(--color-secondary-500), var(--color-secondary-700));
+    --gradient-accent: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-700));
+    --gradient-primary-to-secondary: linear-gradient(135deg, var(--color-primary-500), var(--color-secondary-500));
+    --gradient-dark: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-900));
+    --gradient-light: linear-gradient(135deg, var(--color-neutral-50), var(--color-neutral-100));
+    
+    /* South Africa Specific Colors */
+    --color-za-green: #007749;      /* SA flag green */
+    --color-za-yellow: #FFB915;     /* SA flag yellow */
+    --color-za-black: #000000;      /* SA flag black */
+    --color-za-white: #FFFFFF;      /* SA flag white */
+    --color-za-red: #E03C31;        /* SA flag red */
+    --color-za-blue: #002395;       /* SA flag blue */
+    
+    /* Business Specific Variables */
+    --business-hours-color: var(--color-success);
+    --emergency-color: var(--color-danger);
+    --highlight-color: var(--color-secondary-500);
+    --discount-color: var(--color-danger);
+    --featured-color: var(--color-accent-500);
+    
+    /* Form Variables */
+    --input-height: 3rem;
+    --input-padding: var(--space-3) var(--space-4);
+    --input-border-width: 1px;
+    --input-border-radius: var(--radius-md);
+    --input-focus-ring-width: 3px;
+    --input-focus-ring-color: rgba(42, 92, 143, 0.25);
+    
+    /* Button Variables */
+    --btn-padding-y: var(--space-3);
+    --btn-padding-x: var(--space-6);
+    --btn-font-weight: var(--font-weight-semibold);
+    --btn-line-height: 1.5;
+    --btn-border-radius: var(--radius-md);
+    --btn-transition: color var(--transition-normal) var(--ease-in-out),
+                      background-color var(--transition-normal) var(--ease-in-out),
+                      border-color var(--transition-normal) var(--ease-in-out),
+                      box-shadow var(--transition-normal) var(--ease-in-out),
+                      transform var(--transition-normal) var(--ease-in-out);
+    
+    /* Card Variables */
+    --card-padding: var(--space-6);
+    --card-border-radius: var(--radius-lg);
+    --card-border-width: 1px;
+    --card-border-color: var(--border-color-light);
+    --card-shadow: var(--shadow-md);
+    --card-hover-shadow: var(--shadow-lg);
+    
+    /* Section Variables */
+    --section-padding-y: var(--space-20);
+    --section-padding-x: 0;
+    --section-gap: var(--space-12);
+    
+    /* Header Variables */
+    --header-height: 4rem;
+    --header-bg: var(--color-primary-500);
+    --header-text-color: var(--text-white);
+    --header-shadow: var(--shadow-md);
+    --header-z-index: var(--z-index-fixed);
+    
+    /* Footer Variables */
+    --footer-bg: var(--color-primary-600);
+    --footer-text-color: var(--text-white);
+    --footer-padding-y: var(--space-12);
+    --footer-link-color: rgba(255, 255, 255, 0.8);
+    --footer-link-hover-color: var(--color-secondary-500);
+    
+    /* Hero Section Variables */
+    --hero-min-height: 100vh;
+    --hero-bg-gradient: linear-gradient(rgba(42, 92, 143, 0.85), rgba(42, 92, 143, 0.9));
+    --hero-text-color: var(--text-white);
+    --hero-overlay-opacity: 0.85;
+    
+    /* Map/Contact Variables */
+    --map-height: 400px;
+    --map-border-radius: var(--radius-lg);
+    --contact-icon-size: 3rem;
+    --contact-icon-bg: var(--color-primary-500);
+    --contact-icon-color: var(--text-white);
+    
+    /* Testimonial Variables */
+    --testimonial-bg: var(--color-neutral-50);
+    --testimonial-quote-color: var(--color-secondary-500);
+    --testimonial-author-color: var(--color-primary-500);
+    
+    /* Pricing/Service Variables */
+    --price-color: var(--color-primary-500);
+    --price-featured-bg: var(--color-primary-500);
+    --price-featured-color: var(--text-white);
+    --service-icon-size: 3rem;
+    --service-icon-bg: var(--color-primary-500);
+    --service-icon-color: var(--text-white);
+}
+
+/* ====================
+   Dark Mode Overrides
+   ==================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Background Colors */
+        --bg-body: #121416;
+        --bg-section: #1a1d20;
+        --bg-dark: #0a0c0e;
+        --bg-light: #2d2d2d;
+        --bg-card: #1e2124;
+        --bg-footer: #0d1520;
+        
+        /* Text Colors */
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --text-light: #999999;
+        --text-lighter: #666666;
+        --text-white: #ffffff;
+        --text-on-primary: #ffffff;
+        --text-on-secondary: #121416;
+        
+        /* Border Colors */
+        --border-color: #444444;
+        --border-color-light: #333333;
+        --border-color-dark: #555555;
+        
+        /* Shadows */
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+        
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+        --gradient-secondary: linear-gradient(135deg, var(--color-secondary-600), var(--color-secondary-800));
+        --gradient-dark: linear-gradient(135deg, var(--color-primary-800), var(--color-primary-900));
+        
+        /* Specific Component Overrides */
+        --testimonial-bg: #2d2d2d;
+        --contact-icon-bg: var(--color-primary-600);
+        --service-icon-bg: var(--color-primary-600);
+    }
+}
+
+/* ====================
+   High Contrast Mode
+   ==================== */
+@media (prefers-contrast: high) {
+    :root {
+        --primary: #0056b3;
+        --secondary: #b8860b;
+        --accent: #006400;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --border-color: #000000;
+    }
+}
+
+/* ====================
+   Reduced Motion
+   ==================== */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0.01ms;
+        --transition-normal: 0.01ms;
+        --transition-slow: 0.01ms;
+        --transition-very-slow: 0.01ms;
+    }
+}
+
+/* ====================
+   Print Mode
+   ==================== */
+@media print {
+    :root {
+        --bg-body: #ffffff;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --shadow-md: none;
+        --shadow-lg: none;
+        --shadow-xl: none;
+        --section-padding-y: 0;
+        --hero-min-height: auto;
+    }
 }
