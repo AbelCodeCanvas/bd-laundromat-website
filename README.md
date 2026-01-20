@@ -1,7 +1,7 @@
 
-# BD Laundromat & Logistics Website
+# BD Laundromat & Logistic Website
 
-A professional website for BD Laundromat & Logistics Pty Ltd.
+A professional website for BD Laundromat & Logistic Pty Ltd.
 
 ## Project Structure
 - `index.html` - Main HTML file
