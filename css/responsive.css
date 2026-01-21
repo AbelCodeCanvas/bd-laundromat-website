@@ -387,7 +387,16 @@
         padding: var(--space-md);
         font-size: 2rem;
     }
-    
+/*
+    .service-image,
+    .location-gallery img,
+    .contact-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: var(--radius-md);
+    }
+ */   
     /* About Stats */
     .about-stats {
         grid-template-columns: 1fr;
@@ -629,6 +638,25 @@
    ==================== */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     /* Add high-res background images if needed */
+}
+
+@media (max-width: 768px) {
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-image img {
+        height: 300px;
+    }
 }
 
 /* ====================
