@@ -227,16 +227,15 @@ header {
     gap: 10px;
 }
 */
+
+
 .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Keep flexbox for alignment */
     display: flex;
     align-items: center;
     gap: 10px;
-    z-index: 1; /* Ensure it's above other elements */
-    text-decoration: none; /* Remove underline if logo is a link */
-    color: inherit; /* Inherit text color */
+    /* Adjust order for proper placement */
+    order: 2; /* Places it after mobile menu, before navigation */
 }
 
 
@@ -248,7 +247,6 @@ header {
 .logo-text {
     font-size: 1.5rem;
     font-weight: var(--font-bold);
-    text-align: center; /* Center text within logo */
 }
 
 .logo-text span {
