@@ -217,13 +217,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Add this for absolute centering */
+    min-height: 60px; /* Ensure consistent height */
 }
-
+/*
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+*/
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1; /* Ensure it's above other elements */
+    text-decoration: none; /* Remove underline if logo is a link */
+    color: inherit; /* Inherit text color */
+}
+
 
 .logo-icon {
     font-size: 2.5rem;
@@ -233,6 +248,7 @@ header {
 .logo-text {
     font-size: 1.5rem;
     font-weight: var(--font-bold);
+    text-align: center; /* Center text within logo */
 }
 
 .logo-text span {
@@ -245,6 +261,15 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-white);
+    z-index: 2; /* Ensure it's above logo */
+    order: 1; /* Place first in flex order */
+}
+
+/* Navigation - Position right */
+nav {
+    order: 3; /* Place last in flex order */
+    z-index: 2; /* Ensure it's above logo */
+    margin-left: auto; /* Push to the right */
 }
 
 /* Navigation */
