@@ -398,17 +398,30 @@ nav ul li a.active::after {
 .hero h1 {
     color: var(--text-white);
     font-size: 3.5rem;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     text-align: center; /* Add this line */
 }
 
+.hero-motto {
+    margin-bottom: var(--space-lg); /* Add space below motto */
+}
+
+.hero-motto p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+/*
 .hero p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto var(--space-xl);
 }
+    */
 
 .hero-btns {
     display: flex;
