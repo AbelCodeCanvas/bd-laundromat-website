@@ -414,14 +414,14 @@ nav ul li a.active::after {
     margin: 0 auto;
     line-height: 1.6;
 }
-/*
+
 .hero p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto var(--space-xl);
 }
-    */
+    
 
 .hero-btns {
     display: flex;
