@@ -220,6 +220,27 @@ header {
     position: relative; /* Add this for absolute centering */
     min-height: 60px; /* Ensure consistent height */
 }
+
+/* Logo Image Styles */
+.logo-image {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.logo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Make logo white if it has dark background */
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-image img {
+    transform: scale(1.05);
+}
+
 /*
 .logo {
     display: flex;

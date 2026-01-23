@@ -356,6 +356,10 @@
         padding: 0 var(--space-sm);
     }
     
+    .logo-image {
+        width: 30px;
+        height: 30px;
+    }
     /* Header */
         /* Adjust logo for very small screens */
     .logo {
@@ -671,6 +675,11 @@
     .hero-grid,
     .about-grid {
         grid-template-columns: 1fr;
+    }
+
+    .logo-image {
+        width: 35px;
+        height: 35px;
     }
     
     .hero-image {
