@@ -404,7 +404,7 @@ nav ul li a.active::after {
 }
 
 .hero-motto {
-    margin-bottom: var(--space-lg); /* Add space below motto */
+    margin-bottom: var(--space-xl); /* Add space below motto */
 }
 
 .hero-motto p {
